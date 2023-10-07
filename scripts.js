@@ -140,5 +140,4 @@ function Game(){
     }
 }
 
-console.log('Press any key to start...');
-document.addEventListener('keydown', Game);
+Game();
