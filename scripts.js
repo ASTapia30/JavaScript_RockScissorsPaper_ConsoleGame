@@ -9,14 +9,14 @@ function validationSteps(playerSelection){
     if(typeof(playerSelection) !== "string"){
         return {
             winner: "FAIL",
-            message: "You made a mistake!!!, MUAHAHAHAHA! Rounds reset to 0"
+            message: "You made a mistake!, Repeat the Round"
         }
     }
 
     if(!options.includes(playerSelection.toLowerCase())){
         return {
             winner: "FAIL",
-            message: "You made a mistake!!!, MUAHAHAHAHA! Rounds reset to 0"
+            message: "You made a mistake!, Repeat the Round"
         }
     }
 }
@@ -67,7 +67,7 @@ function playRound(playerSelection, computerSelection){
     return {winner, message};
 }
 
-function Game(){
+function game(){
     let scorePlayer = 0;
     let scoreComp = 0;
     let round = 1;
@@ -75,9 +75,9 @@ function Game(){
 
     while (round != 6){
         console.log("|------------------Round #" + round +" ------------------|");
-        var playerSelection = prompt("Pick your choice: Rock / Scissors / Paper");
-        var computerSelection = computerPlay();
-        var result = playRound(playerSelection,computerSelection);
+        let playerSelection = prompt("Pick your choice: Rock / Scissors / Paper");
+        let computerSelection = computerPlay();
+        let result = playRound(playerSelection,computerSelection);
         
         switch (result.winner) {
             case "PLAYER":
@@ -113,9 +113,9 @@ function Game(){
                 
             case "FAIL":
                 console.log(result.message);
-                scoreComp = 0;
-                scorePlayer = 0;
-                round = 1;
+                scoreComp = scoreComp;
+                scorePlayer = scorePlayer;
+                round = round;
                 console.log("|| Player: " + scorePlayer + "         ||         " + " Computer: " + scoreComp + " ||")
                 console.log("|                                             |")
                 console.log("|_____________________________________________|")
@@ -140,4 +140,4 @@ function Game(){
     }
 }
 
-Game();
+game();
